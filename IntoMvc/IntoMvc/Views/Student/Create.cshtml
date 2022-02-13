@@ -1,0 +1,23 @@
+﻿@model IntoMvc.Models.Student
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form action="/Student/Create" method="post">
+
+    <input type="text" class="form-control" value="@Model.Name" name="Name"  placeholder="Name" />
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    <input type="text" class="form-control" value="@Model.Id"  name="Id" placeholder="Id" />
+    @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+    <input type="text" class="form-control" value="@Model.Dept"  name="Dept" placeholder="Departmant" />
+    @Html.ValidationMessageFor(model => model.Dept, "", new { @class = "text-danger" })
+    <input type="text" class="form-control" value="@Model.BGrp"  name="BGrp" placeholder="Blood Group" />
+    @Html.ValidationMessageFor(model => model.BGrp, "", new { @class = "text-danger" })
+
+    <input type="submit" value="Submit" />
+
+</form>
+

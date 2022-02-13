@@ -1,0 +1,32 @@
+﻿@model List<IntoMvc.Models.Person>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+
+<h2>Home</h2>
+
+<p>Welcome Homepage</p>
+
+<h1>Data</h1>
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Dob</th>
+        <th>Email</th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Dob</td>
+            <td>@p.Email</td>
+        </tr>
+    }
+
+</table>
+

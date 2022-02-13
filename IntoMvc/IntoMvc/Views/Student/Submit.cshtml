@@ -1,0 +1,22 @@
+﻿@model IntoMvc.Models.Student
+@{
+    ViewBag.Title = "Submit";
+    Layout = "~/Views/Shared/_myLayout.cshtml";
+}
+
+<h2>Submit</h2>
+
+<table class="tbale table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Dob</th>
+        <th>BGrp</th>
+    </tr>
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td>@Model.Dept</td>
+    <td>@Model.BGrp</td>
+</table>
+
