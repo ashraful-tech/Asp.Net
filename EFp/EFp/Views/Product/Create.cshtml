@@ -1,0 +1,17 @@
+﻿@model EFp.Models.Database.Student
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form action="/Product/Create" method="post">
+    <input type="text" class="form-control" name="Name" />
+    <input type="text" class="form-control" name="Id" />
+    <input type="text" class="form-control" name="DoB" />
+    <input type="text" class="form-control" name="Dept" />
+    <input type="text" class="form-control" name="cgpa" />
+    <input type="submit" value="Create" />
+</form>
+

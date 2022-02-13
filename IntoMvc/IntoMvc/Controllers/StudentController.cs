@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using IntoMvc.Models;
+using IntoMvc.Models.Database;
 
 
 namespace IntoMvc.Controllers
@@ -15,6 +16,12 @@ namespace IntoMvc.Controllers
         {
             return View();
         }
+
+        public ActionResult Submit()
+        {
+            return View(new List<Student>());
+        }
+
         [HttpGet]
         public ActionResult Create()
         {
@@ -26,17 +33,16 @@ namespace IntoMvc.Controllers
         {
             if(ModelState.IsValid)
             {
-                return RedirectToAction("Home", "Product");
+                StudentEntities db = new StudentEntities();
+                db.Students.Add(s);
+                db.SaveChanges();
+                return RedirectToAction("Submit");
             }
-            return View(s);
-        }
-
-
-
-        [HttpPost]
-        public ActionResult Submit()
-        {
             return View();
         }
+
+
+
+       
     }
 }
